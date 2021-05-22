@@ -1,0 +1,86 @@
+{
+    "debug": 0,
+    "refreshFrequency": 60000,
+    "idle": 300,
+    "group": false,
+    "instances": [
+        {
+            "id": "My Instance",
+            "url": "https://monit.myinstance.tld/_status?format=xml",
+            "user": "",
+            "passwd": "",
+            "insecure": false,
+            "noncritical": ["ftpd"],
+            "showStats": false,
+            "enabled": true
+        }
+    ],
+    "showOk" : [7, "nginx", "temperature", "mysql"],
+    "showUnmonitoredInfos": 2,
+    "top": "30px",
+    "left": "20px",
+    "forceColumn": true,
+    "maxWidth": "220px",
+    "maxHeight": "90vh",
+    "color1": "#b7275d",
+    "color2": "#c22963",
+    "programOutputColor": "#62679f",
+    "listBackgroundColor": "rgba(0, 6, 10, 0.98)",
+    "listBorderColor": "#1a1748",
+    "listInfosColor": "#8e95ce",
+    "listCompression": 5,
+
+    "unmonitoredServices": {
+        "default": {
+            "style": {
+                "borderColor": "#8a5c00 #8a5c00 #8a5c00 orange",
+                "backgroundColor": "rgba(87, 38, 0, 0.98)"
+            },
+            "programOutputColor": "orange",
+            "listInfosColor": "orange"
+        },
+        "noncritical": {
+            "style": {
+                "borderColor": "#4b3621 #4b3621 #4b3621 orange",
+                "backgroundColor": "rgba(14,8,4,0.98)"
+            },
+            "programOutputColor": "orange",
+            "listInfosColor": "orange"
+        }
+    },
+
+    "failedServices": {
+        "default": {
+            "style": {
+                "borderColor": "#560025 #560025 #560025 red",
+                "backgroundColor": "rgba(20, 0, 5, 0.99)"
+            },
+            "programOutputColor": "red",
+            "listInfosColor": "red"
+        },
+        "noncritical": {
+            "style": {
+                "borderLeftColor": "red",
+                "backgroundColor": "rgba(20,0,0,0.98)"
+            },
+            "programOutputColor": "red",
+            "listInfosColor": "red"
+        }
+    },
+
+    "_dimOk": "#a4a4d6",
+    "ordered": true,
+    "coloredIndicator": true,
+    "servicesOpts": {
+        "5": { "p": 0, "c": "#2c2b36", "s": {"marginTop": "0", "marginBottom":"5px"}},
+        "8": { "p": 1, "c": "#498152"},
+        "0": { "p": 2, "c": "#88786d"},
+
+        "1": { "p": 4, "c": "#3d4c50"},
+        "2": { "p": 4, "c": "#3d4c50"},
+        "3": { "p": 4, "c": "#4eb668"},
+        "4": { "p": 4, "c": "#7169b9"},
+        "6": { "p": 4, "c": "brown"},
+        "7": { "p": 4, "c": "#453687"}
+    }
+}

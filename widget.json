@@ -1,0 +1,6 @@
+{
+  "name": "Monit",
+  "description": "Show status of instances monitored with monit.",
+  "author": "Dominique Da Silva",
+  "email": "dom@inspira.io"
+}
