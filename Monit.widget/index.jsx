@@ -209,13 +209,14 @@ export const classes = {
         overflowY: inColumn ? 'hidden' : 'scroll',
     }),
     instance: css({
-        maxHeight: inColumn ? 'initial' : config.maxHeight,
+        maxHeight: inColumn ? 'inherit' : config.maxHeight,
         overflowY: inColumn ? 'scroll' : 'initial'
     }),
     list: css({
         listStyle: 'none',
         padding: '10px 10px 6px 10px',
         maxWidth: config.maxWidth ?? '220px',
+        width: config.maxWidth ?? '220px',
         margin: 0,
         "& > li": {
             background: config.listBackgroundColor,
@@ -377,7 +378,7 @@ export const classes = {
         padding: '0 10px',
         height: '12px',
         position: 'absolute',
-        right: '5px',
+        right: 0,
         top: '5px',
         cursor: 'pointer',
         zDepth: 100,
@@ -466,9 +467,9 @@ const ServiceCheck = (props) => {
     )
 }
 
-const Chevron = () => {
+const Chevron = ({onClick}) => {
     const updown = config.showOk === true ? 'down' : 'up'
-    return <a className={`${classes.chevron} ${updown}`} onClick={(e) => toggleVisible(e)}><i>&#8963;</i></a>
+    return <a className={`${classes.chevron} ${updown}`} onClick={onClick}><i>&#8963;</i></a>
 }
 
 const SystemStats = ({load, memory}) => {
@@ -547,7 +548,7 @@ const ServiceItem = (props) => {
                     {service.name}
                     {service.type === 5 ? (
                         <>
-                            <Chevron />
+                            <Chevron onClick={(e) => toggleVisible(e)} />
                             <SystemStats load={service.system.load} memory={service.system.memory} />
                         </>
                     ) : null}
