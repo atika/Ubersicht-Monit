@@ -624,7 +624,7 @@ const ErrorDisplay = (props) => {
 
     return (
         <>
-            <ul className={classes.list} style={{ maxWidth: props.global ? 400 : 220 }}>
+            <ul className={classes.list} style={{ maxWidth: props.global ? 440 : config.maxWidth, width: 'auto' }}>
                 <li style={listStyles({ status: status })}>
                     <div className="content">
                         <StatusIcon status={status} /> <span className={classes.error}>{error.message}</span>
