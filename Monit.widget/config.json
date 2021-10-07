@@ -3,6 +3,7 @@
     "refreshFrequency": 60000,
     "idle": 300,
     "group": false,
+    "curl": "/usr/bin/curl",
     "instances": [
         {
             "id": "My Instance",

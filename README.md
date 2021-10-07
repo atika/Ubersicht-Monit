@@ -18,6 +18,7 @@ With the json configuration file, you can manage the monit instances, but also d
 | refreshFrequency     | `number`           | ms                   | monit data fetch frequency                           |
 | idle                 | `number`           | seconds              | seconds of inactivity after the widget stop fetching data |
 | group                | `bool`             | true/false           | __experimental__: group instances (in array) and display each group alternatively. Caveat: This redraw all the widget each time. |
+| curl                 | `string`           | path                 | path to the curl binary                              |
 | instances            | `array`            | `instance`           | array of instance definition                         |
 | showOk               | `bool` or `array`  | true/false or array  | `true` to show all ok services or an `array` of services names or types to show |
 | showUnmonitoredInfos | `bool`/`number`    | true/false, 1, 2     | show unmonitored services infos, 1 or true for all, 2 for only essential services |
@@ -71,6 +72,7 @@ __instance__
     "refreshFrequency": 60000,
     "idle": 300,
     "group": false,
+    "curl": "/usr/local/opt/curl/bin/curl",
     "instances": [
         {
             "id": "Ubuntu Server",

@@ -134,7 +134,7 @@ export const command = (dispatch) =>
                 const insecure = instance.insecure ? '-k' : '';
                 const creds = (instance.passwd && instance.passwd !== '') ? `-u "${instance.user}:${instance.passwd}"` : '';
 
-                return run(`sleep ${0.2 * i} && curl --silent ${insecure} ${creds} "${instance.url}" | sed 's/ISO-8859-1/UTF-8/'`).finally(() => {
+                return run(`sleep ${0.2 * i} && ${config.curl} --silent ${insecure} ${creds} "${instance.url}" | sed 's/ISO-8859-1/UTF-8/'`).finally(() => {
                     _updatesDates[i] = DateTime.now();
                 })
             })
@@ -756,7 +756,7 @@ const getInstanceStats = (data) => {
                 break;
             case 7: // program
                 stats['program'] = service.program || {output: 'Initializing', status: '-1'};
-                stats.infos = stats.infos.format(`(status ${service.program.status})`);
+                stats.infos = stats.infos.format(`(status ${stats['program'].status})`);
                 break;
             default:
                 stats.infos = stats.infos.format(`\n${checked_at}`);
